@@ -1,5 +1,7 @@
 # Project 3 - HUBL
 
+<img src="client/src/assets/readMe-images/landing.png" alt="Homepage" title="Homepage">
+
 </br>
 <h2>Description</h2>
 
@@ -31,49 +33,50 @@ The project was finished within 7 days by a total of two people. It was a pleasu
 </br>
 <h2>Technologies Used</h2>
 
-
-MongoDB
-Express
-React.js
-Node.js
-JavaScript
-JWT
-Axios
-Bcrypt
-Git + GitHub
-BootStrap
-Cloudinary
-Excalidraw.com
-Slack
-Trello
+<ul>
+  <li>MongoDB</li>
+  <li>Express.js</li>
+  <li>React.js</li>
+  <li>Node.js</li>
+  <li>JavaScript</li>
+  <li>JWT</li>
+  <li>Axios</li>
+  <li>Bcrypt</li>
+  <li>Git + GitHub</li>
+  <li>BootStrap</li>
+  <li>Cloudinary</li>
+  <li>Excalidraw.com</li>
+  <li>Slack</li>
+  <li>Trello</li>
+</ul>
 
 
 </br>
 <h2>Brief</h2>
 
-
-Build a full-stack application by making your own backend and your own front-end
-Use an Express API to serve your data from a Mongo database
-Consume your API with a separate front-end built with React
-Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models
-Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut
-Have a visually impressive design to kick your portfolio up a notch and have something to wow future clients & employers. 
-Be deployed online so it's publicly accessible.
+<ul>
+  <li>Build a full-stack application by making your own backend and your own front-end.</li>
+  <li>Use an Express API to serve your data from a Mongo database.</li>
+  <li>Consume your API with a separate front-end built with React.</li>
+  <li>Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models.</li>
+  <li>Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut.</li>
+  <li>Have a visually impressive design to kick your portfolio up a notch and have something to wow future clients & employers. </li>
+  <li>Be deployed online so it's publicly accessible.</li>
+</ul>
 
 
 
 </br>
 <h2>Planning</h2>
 
-
-
-
+<img src="client/src/assets/readMe-images/wireframe.png" alt="Wireframe" title="Wireframe">
 
 
 Similar to my previous projects, our team used Excalidraw to wireframe the basic pages we would want to achieve. We started off with the homepage which would consist of a header with the project logo, register and login buttons. On the main part we would have only 6 groups displayed with a functionality to click through more pages of groups. Next we created the wireframe of a group page, which consists of the group name itself and a description in the banner. Below we would display the individual posts and have the option to comment on them. Our stretch goal was to add a profile page for each user. 
 
 During the project, we created a Trello board to keep track of things we needed to achieve, as well as fix certain bugs. Even though we both had our own tasks, we would stay in a Google-Hangout to keep the communication. By doing so, we were able to ask each other questions when one of us got stuck. This also allowed us to learn from each other quite effectively.
 
+<img src="client/src/assets/readMe-images/trello.png" alt="Trello" title="Trello">
 
 </br>
 <h2>Build/Code Process</h2>
@@ -81,27 +84,33 @@ During the project, we created a Trello board to keep track of things we needed 
 
 Our first steps in the build process was to create a working back-end. Here, we defined the group schema with Mongoose, which had a similar schema nested inside for individual posts. The post schema also had a comment schema nested inside. We used these schemas to seed our database. This was our core structure of our app. 
 
-Next up was to create controllers for our back-end. An example of this is our “getAllGroups” function which we also used for our search function. The search function was part of my responsibility and turned out to be a challenge as we limited the groups to display only 6 at a time. This would influence the search function and only search out of those 6. To solve this, we added an if-statement that would check if something has been searched. If yes, it would take all groups and filter them based on the searched term. This would then go through a ternary that decides whether to map the names or return an empty array. Next, the “filter” variable checks the length of that array and saves either an object with the contents, or an empty object.  The .find method takes this variable as an argument to find the desired group which would then get returned as a .json.
+<img src="client/src/assets/readMe-images/mongoose-schema.png" alt="Mongoose Schemas" title="Mongoose Schemas">
+
+Next up was to create controllers for our back-end. An example of this is our “getAllGroups” function which we also used for our search function. The search function was part of my responsibility and turned out to be a challenge as we limited the groups to display only 6 at a time. This would influence the search function and only search out of those 6. To solve this, we added an if-statement that would check if something has been searched. If yes, it would take all groups and filter them based on the searched term. This would then go through a ternary that decides whether to map the names or return an empty array. Next, the “filter” variable checks the length of that array and saves either an object with the contents, or an empty object. The .find method takes this variable as an argument to find the desired group which would then get returned as a .json.
+
+<img src="client/src/assets/readMe-images/getAllGroups.png" alt="Filter and Find" title="Filter and Find">
 
 
-
-Authentication:
+<h3>Authentication:</h3>
 I was also eager to learn about the authentication on an App and therefore focused on creating the registration and login functionality. For that, a user schema had to be created, saving the essentials such as username, email, and password. Once created, I was able to build the authentication controllers, which can be seen below:
 
-
+<img src="client/src/assets/readMe-images/auth-user.png" alt="User Authentication" title="User Authentication">
 
 In these controllers, we were able to incorporate some error handling for better user experience. 
 
-Homepage:
+<h3>Homepage:</h3>
 My main responsibility was to create the homepage of our app. Using Axios, we fetched our data from our database. As seen on the first useEffect from the screenshot below, we use skip and limit as parameters to only show 6 groups at a time. The user is able to press a button to flip through different pages of groups without reloading the page. 
+
+<img src="client/src/assets/readMe-images/getData.png" alt="Get Homepage Data" title="Get Homepage Data">
 
 There are two buttons which act as a page up or page down function. 
 
+<img src="client/src/assets/readMe-images/pages.png" alt="Page up & down" title="Page up & down">
 
 Additionally, one functionality that I added was an image upload using Cloudinary. 
 
 
-
+<img src="client/src/assets/readMe-images/image-upload.png" alt="Cloudinary" title="Cloudinary">
 
 
 
@@ -112,8 +121,11 @@ Additionally, one functionality that I added was an image upload using Cloudinar
 
 One challenge included getting the navbar to update based on the user’s authentication status. The plan was to have “login” and “register” in the navbar when the user is not logged in, and when they are, it should change to “logout” and have a link to their “profile”. For that, we had to create a function that checks the user’s status as below: 
 
+<img src="client/src/assets/readMe-images/isAuth.png" alt="is Authenticated" title="is Authenticated">
+
 Next, we used this to create a ternary inside the return function of the navbar itself: 
 
+<img src="client/src/assets/readMe-images/navbar.png" alt="Navbar" title="Navbar">
 
 As mentioned earlier, it was difficult building the homepage to display only 6 groups at once and have the search function still search through all. 
 
